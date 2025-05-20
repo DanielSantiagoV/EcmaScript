@@ -91,3 +91,28 @@ footer {
     font-size: 1.5rem;
   }
 }
+
+/* Estilo para el contenedor del logo */
+.logo {
+    display: flex;
+    justify-content: center;        /* Centra horizontalmente */
+    align-items: center;            /* Centra verticalmente */
+    padding: 10px 0;
+    text-decoration: none;
+  }
+  
+  /* Estilo para la imagen del logo */
+  .logo img {
+    width: 300px;                    /* Tamaño adecuado y responsivo */
+    height: auto;
+    border-radius: 8px;             /* Bordes suavemente redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Efecto hover para el logo */
+  .logo:hover img {
+    transform: scale(1.08);         /* Efecto de zoom suave */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Sombra más marcada */
+  }
+  

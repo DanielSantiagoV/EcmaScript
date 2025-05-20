@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía Completa de ECMAScript</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="tutorial-page">
+  <header>
+    <h1>📘 Guía Completa de ECMAScript</h1>
+    <p>Una introducción fácil y visual a la evolución de JavaScript desde sus inicios hasta hoy.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="Logo JavaScript" width="100" />
+  </header>
+
+  <main>
+    <section id="que-es">
+      <h2>¿Qué es ECMAScript?</h2>
+      <p>
+        ECMAScript es el estándar que define cómo debe funcionar el lenguaje <strong>JavaScript</strong>. Fue creado por la organización <a href="https://ecma-international.org" target="_blank">ECMA International</a> para que los navegadores implementaran JavaScript de forma coherente.
+      </p>
+      <p>
+        En otras palabras, ECMAScript es como una "receta" que todos los navegadores siguen para que el código JavaScript funcione igual sin importar si usas Chrome, Firefox, Safari o Edge.
+      </p>
+      <a href="#" class="logo">
+        <img src="../img/ecmascript.png" alt="Logo ECMAScript" />
+      </a>
+      
+    </section>
+
+    <section id="como-usar">
+      <h2>¿Cómo se usa ECMAScript?</h2>
+      <p>
+        Aunque no "instalamos" ECMAScript como tal, lo usamos todos los días al escribir código JavaScript moderno. A medida que salen nuevas versiones del estándar (cada año), navegadores y herramientas de desarrollo adoptan las nuevas funciones.
+      </p>
+      <p>
+        Herramientas como <a href="https://babeljs.io/" target="_blank">Babel</a> permiten convertir código moderno a una versión compatible con navegadores antiguos.
+      </p>
+    </section>
+
+    <section id="versiones">
+      <h2>Versiones de ECMAScript</h2>
+      <p>Veamos cómo ha evolucionado ECMAScript desde sus primeras versiones hasta hoy, con ejemplos que puedes probar fácilmente.</p>
+
+      <article>
+        <h3>🔹 ES1 - ES3 (1997-1999)</h3>
+        <p>Primeras versiones, definieron las bases del lenguaje: variables, estructuras de control (<code>if</code>, <code>while</code>), funciones y tipos de datos.</p>
+      </article>
+
+      <article>
+        <h3>🔹 ES5 (2009)</h3>
+        <p>Ampliamente adoptada. Agregó <code>strict mode</code>, JSON nativo, y métodos como <code>map()</code>, <code>filter()</code> y <code>forEach()</code>.</p>
+        <pre><code>'use strict';
+const numeros = [1, 2, 3];
+numeros.forEach(n => console.log(n));</code></pre>
+      </article>
+
+      <article>
+        <h3>🔹 ES6 / ES2015</h3>
+        <p>Una de las mayores actualizaciones: <code>let</code>, <code>const</code>, funciones flecha, clases, promesas, template literals, módulos, etc.</p>
+        <pre><code>const nombre = "Ana";
+const saludo = `Hola, ${nombre}`;
+console.log(saludo);</code></pre>
+      </article>
+
+      <article>
+        <h3>🔹 ES7 / ES2016</h3>
+        <p>Pequeñas mejoras: operador de potencia <code>**</code> y método <code>includes()</code>.</p>
+        <pre><code>console.log(2 ** 3); // 8
+console.log([1, 2, 3].includes(2));</code></pre>
+      </article>
+
+      <article>
+        <h3>🔹 ES8 / ES2017</h3>
+        <p>Introducción de funciones asíncronas con <code>async/await</code>.</p>
+        <pre><code>async function obtenerDatos() {
+  const res = await fetch('/datos.json');
+  const datos = await res.json();
+  console.log(datos);
+}</code></pre>
+      </article>
+
+      <article>
+        <h3>🔹 ES9 / ES2018</h3>
+        <p>Agrega el operador spread/rest en objetos y <code>Promise.prototype.finally()</code>.</p>
+        <pre><code>const obj = {a: 1, b: 2};
+const copia = {...obj, c: 3};</code></pre>
+      </article>
+
+      <article>
+        <h3>🔹 ES10 a ES2024</h3>
+        <ul>
+          <li><strong>ES2019:</strong> <code>Array.prototype.flat()</code>, <code>trimStart</code></li>
+          <li><strong>ES2020:</strong> <code>Optional chaining</code>, <code>Nullish coalescing (??)</code></li>
+          <li><strong>ES2021:</strong> <code>replaceAll</code>, operadores lógicos asignables</li>
+          <li><strong>ES2022:</strong> Clases con campos privados <code>#</code></li>
+          <li><strong>ES2023:</strong> <code>findLast()</code> y métodos de limpieza en objetos</li>
+          <li><strong>ES2024:</strong> Propuesta de <code>do expressions</code> y mejoras en async context</li>
+        </ul>
+        <pre><code>// Optional chaining (ES2020)
+const usuario = { perfil: null };
+console.log(usuario.perfil?.nombre ?? "Sin nombre");</code></pre>
+      </article>
+    </section>
+
+    <section id="conclusion">
+      <h2>📌 Conclusión</h2>
+      <p>ECMAScript es el motor detrás de JavaScript moderno. Aprender las nuevas versiones y sus funciones permite escribir código más limpio, eficiente y fácil de mantener.</p>
+      <p>No necesitas aprender todo de una vez, pero conocer las herramientas más recientes te da una gran ventaja como desarrollador web.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>📘 Tutorial con fines educativos, creado por Javier Duarte & Daniel Vinasco</p>
+  </footer>
+</body>
+</html>
