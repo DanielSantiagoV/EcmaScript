@@ -1,117 +1,847 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guía Completa de ECMAScript</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete ECMAScript Guide - Interactive Tutorial</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body class="tutorial-page">
-  <header>
-    <h1>📘 Guía Completa de ECMAScript</h1>
-    <p>Una introducción fácil y visual a la evolución de JavaScript desde sus inicios hasta hoy.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="Logo JavaScript" width="100" />
-  </header>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fab fa-js"></i>
+                <span>ECMAScript Guide</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#overview" class="nav-link">Overview</a></li>
+                <li><a href="#versions" class="nav-link">Versions</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#examples" class="nav-link">Examples</a></li>
+                <li><a href="#resources" class="nav-link">Resources</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-  <main>
-    <section id="que-es">
-      <h2>¿Qué es ECMAScript?</h2>
-      <p>
-        ECMAScript es el estándar que define cómo debe funcionar el lenguaje <strong>JavaScript</strong>. Fue creado por la organización <a href="https://ecma-international.org" target="_blank">ECMA International</a> para que los navegadores implementaran JavaScript de forma coherente.
-      </p>
-      <p>
-        En otras palabras, ECMAScript es como una "receta" que todos los navegadores siguen para que el código JavaScript funcione igual sin importar si usas Chrome, Firefox, Safari o Edge.
-      </p>
-      <a href="#" class="logo">
-        <img src="img/ecmascript.png" alt="Logo ECMAScript" />
-      </a>
-      
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text">Complete ECMAScript</span>
+                <br>Interactive Guide
+            </h1>
+            <p class="hero-subtitle">
+                Master JavaScript's evolution from ES1 to ES2024 with interactive examples, 
+                detailed explanations, and hands-on tutorials.
+            </p>
+            <div class="hero-buttons">
+                <a href="#overview" class="btn btn-primary">Get Started</a>
+                <a href="#versions" class="btn btn-secondary">View Versions</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Versions</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Features</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Examples</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="code-preview">
+                <div class="code-header">
+                    <span class="code-dot red"></span>
+                    <span class="code-dot yellow"></span>
+                    <span class="code-dot green"></span>
+                    <span class="code-title">modern.js</span>
+                </div>
+                <pre class="code-content"><code>// ES2024 Features
+const user = {
+  name: 'John',
+  age: 30,
+  #privateField: 'secret'
+};
+
+// Optional chaining & nullish coalescing
+const city = user?.address?.city ?? 'Unknown';
+
+// Array methods
+const numbers = [1, 2, 3, 4, 5];
+const lastEven = numbers.findLast(n => n % 2 === 0);
+
+console.log(city, lastEven);</code></pre>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+        <div class="container">
+            <h2 class="section-title">What is ECMAScript?</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Standard Specification</h3>
+                    <p>ECMAScript is the official specification that defines how JavaScript should work. It's maintained by ECMA International and ensures consistent behavior across all browsers and JavaScript engines.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Cross-Platform</h3>
+                    <p>By following the ECMAScript standard, developers can write JavaScript code that works consistently across Chrome, Firefox, Safari, Edge, and other browsers.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Annual Releases</h3>
+                    <p>Since ES2015, ECMAScript follows an annual release cycle, introducing new features and improvements to make JavaScript more powerful and developer-friendly.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="como-usar">
-      <h2>¿Cómo se usa ECMAScript?</h2>
-      <p>
-        Aunque no "instalamos" ECMAScript como tal, lo usamos todos los días al escribir código JavaScript moderno. A medida que salen nuevas versiones del estándar (cada año), navegadores y herramientas de desarrollo adoptan las nuevas funciones.
-      </p>
-      <p>
-        Herramientas como <a href="https://babeljs.io/" target="_blank">Babel</a> permiten convertir código moderno a una versión compatible con navegadores antiguos.
-      </p>
-    </section>
+    <!-- Versions Timeline -->
+    <section id="versions" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">ECMAScript Versions Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1997</div>
+                    <div class="timeline-content">
+                        <h3>ES1 - First Edition</h3>
+                        <p>The original ECMAScript standard that established the foundation of JavaScript.</p>
+                        <ul>
+                            <li>Basic syntax and grammar</li>
+                            <li>Variables and data types</li>
+                            <li>Control structures</li>
+                            <li>Functions</li>
+                        </ul>
+                    </div>
+                </div>
 
-    <section id="versiones">
-      <h2>Versiones de ECMAScript</h2>
-      <p>Veamos cómo ha evolucionado ECMAScript desde sus primeras versiones hasta hoy, con ejemplos que puedes probar fácilmente.</p>
+                <div class="timeline-item">
+                    <div class="timeline-marker">1998</div>
+                    <div class="timeline-content">
+                        <h3>ES2 - Second Edition</h3>
+                        <p>Minor updates to align with ISO/IEC 16262 international standard.</p>
+                    </div>
+                </div>
 
-      <article>
-        <h3>🔹 ES1 - ES3 (1997-1999)</h3>
-        <p>Primeras versiones, definieron las bases del lenguaje: variables, estructuras de control (<code>if</code>, <code>while</code>), funciones y tipos de datos.</p>
-      </article>
+                <div class="timeline-item">
+                    <div class="timeline-marker">1999</div>
+                    <div class="timeline-content">
+                        <h3>ES3 - Third Edition</h3>
+                        <p>Significant improvements including regular expressions, better string handling, and exception handling.</p>
+                        <ul>
+                            <li>Regular expressions</li>
+                            <li>try-catch exception handling</li>
+                            <li>Better string methods</li>
+                            <li>Formatting for numeric output</li>
+                        </ul>
+                    </div>
+                </div>
 
-      <article>
-        <h3>🔹 ES5 (2009)</h3>
-        <p>Ampliamente adoptada. Agregó <code>strict mode</code>, JSON nativo, y métodos como <code>map()</code>, <code>filter()</code> y <code>forEach()</code>.</p>
-        <pre><code>'use strict';
-const numeros = [1, 2, 3];
-numeros.forEach(n => console.log(n));</code></pre>
-      </article>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2009</div>
+                    <div class="timeline-content">
+                        <h3>ES5 - Fifth Edition</h3>
+                        <p>A major update that introduced strict mode and many new methods for arrays and objects.</p>
+                        <ul>
+                            <li>Strict mode ('use strict')</li>
+                            <li>JSON support</li>
+                            <li>Array methods: map, filter, reduce</li>
+                            <li>Object getters and setters</li>
+                            <li>Property descriptors</li>
+                        </ul>
+                        <div class="code-example">
+                            <h4>ES5 Example:</h4>
+                            <pre><code>'use strict';
 
-      <article>
-        <h3>🔹 ES6 / ES2015</h3>
-        <p>Una de las mayores actualizaciones: <code>let</code>, <code>const</code>, funciones flecha, clases, promesas, template literals, módulos, etc.</p>
-        <pre><code>const nombre = "Ana";
-const saludo = `Hola, ${nombre}`;
-console.log(saludo);</code></pre>
-      </article>
+var numbers = [1, 2, 3, 4, 5];
+var doubled = numbers.map(function(n) {
+    return n * 2;
+});
 
-      <article>
-        <h3>🔹 ES7 / ES2016</h3>
-        <p>Pequeñas mejoras: operador de potencia <code>**</code> y método <code>includes()</code>.</p>
-        <pre><code>console.log(2 ** 3); // 8
-console.log([1, 2, 3].includes(2));</code></pre>
-      </article>
+console.log(doubled); // [2, 4, 6, 8, 10]</code></pre>
+                        </div>
+                    </div>
+                </div>
 
-      <article>
-        <h3>🔹 ES8 / ES2017</h3>
-        <p>Introducción de funciones asíncronas con <code>async/await</code>.</p>
-        <pre><code>async function obtenerDatos() {
-  const res = await fetch('/datos.json');
-  const datos = await res.json();
-  console.log(datos);
+                <div class="timeline-item">
+                    <div class="timeline-marker">2015</div>
+                    <div class="timeline-content">
+                        <h3>ES6/ES2015 - Sixth Edition</h3>
+                        <p>The most significant update in ECMAScript history, introducing modern JavaScript features.</p>
+                        <ul>
+                            <li>let and const declarations</li>
+                            <li>Arrow functions</li>
+                            <li>Classes</li>
+                            <li>Template literals</li>
+                            <li>Destructuring</li>
+                            <li>Modules (import/export)</li>
+                            <li>Promises</li>
+                            <li>Symbols</li>
+                            <li>Generators</li>
+                        </ul>
+                        <div class="code-example">
+                            <h4>ES6 Example:</h4>
+                            <pre><code>// Arrow functions and template literals
+const greet = (name) => `Hello, ${name}!`;
+
+// Destructuring
+const { title, author } = book;
+
+// Classes
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+    
+    greet() {
+        return greet(this.name);
+    }
 }</code></pre>
-      </article>
+                        </div>
+                    </div>
+                </div>
 
-      <article>
-        <h3>🔹 ES9 / ES2018</h3>
-        <p>Agrega el operador spread/rest en objetos y <code>Promise.prototype.finally()</code>.</p>
-        <pre><code>const obj = {a: 1, b: 2};
-const copia = {...obj, c: 3};</code></pre>
-      </article>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2016</div>
+                    <div class="timeline-content">
+                        <h3>ES7/ES2016</h3>
+                        <p>Small but useful additions to the language.</p>
+                        <ul>
+                            <li>Array.prototype.includes()</li>
+                            <li>Exponentiation operator (**)</li>
+                        </ul>
+                        <div class="code-example">
+                            <h4>ES7 Example:</h4>
+                            <pre><code>// Exponentiation operator
+const result = 2 ** 3; // 8
 
-      <article>
-        <h3>🔹 ES10 a ES2024</h3>
-        <ul>
-          <li><strong>ES2019:</strong> <code>Array.prototype.flat()</code>, <code>trimStart</code></li>
-          <li><strong>ES2020:</strong> <code>Optional chaining</code>, <code>Nullish coalescing (??)</code></li>
-          <li><strong>ES2021:</strong> <code>replaceAll</code>, operadores lógicos asignables</li>
-          <li><strong>ES2022:</strong> Clases con campos privados <code>#</code></li>
-          <li><strong>ES2023:</strong> <code>findLast()</code> y métodos de limpieza en objetos</li>
-          <li><strong>ES2024:</strong> Propuesta de <code>do expressions</code> y mejoras en async context</li>
-        </ul>
-        <pre><code>// Optional chaining (ES2020)
-const usuario = { perfil: null };
-console.log(usuario.perfil?.nombre ?? "Sin nombre");</code></pre>
-      </article>
+// Array includes
+const fruits = ['apple', 'banana', 'orange'];
+console.log(fruits.includes('banana')); // true</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">2017</div>
+                    <div class="timeline-content">
+                        <h3>ES8/ES2017</h3>
+                        <p>Introduced async/await for better asynchronous programming.</p>
+                        <ul>
+                            <li>async/await</li>
+                            <li>Object.values() and Object.entries()</li>
+                            <li>String padding (padStart, padEnd)</li>
+                            <li>SharedArrayBuffer and Atomics</li>
+                        </ul>
+                        <div class="code-example">
+                            <h4>ES8 Example:</h4>
+                            <pre><code>// Async/await
+async function fetchUser(id) {
+    try {
+        const response = await fetch(`/api/users/${id}`);
+        const user = await response.json();
+        return user;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+// Object methods
+const obj = { a: 1, b: 2, c: 3 };
+console.log(Object.values(obj)); // [1, 2, 3]
+console.log(Object.entries(obj)); // [['a', 1], ['b', 2], ['c', 3]]</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">2018</div>
+                    <div class="timeline-content">
+                        <h3>ES9/ES2018</h3>
+                        <p>Enhanced object and promise features.</p>
+                        <ul>
+                            <li>Rest/spread properties for objects</li>
+                            <li>Promise.prototype.finally()</li>
+                            <li>Asynchronous iteration</li>
+                            <li>RegExp improvements</li>
+                        </ul>
+                        <div class="code-example">
+                            <h4>ES9 Example:</h4>
+                            <pre><code>// Object rest/spread
+const { x, y, ...rest } = { x: 1, y: 2, a: 3, b: 4 };
+console.log(rest); // { a: 3, b: 4 }
+
+const obj = { ...rest, z: 5 };
+
+// Promise.finally
+fetch('/api/data')
+    .then(response => response.json())
+    .catch(error => console.error(error))
+    .finally(() => console.log('Request completed'));</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">2019</div>
+                    <div class="timeline-content">
+                        <h3>ES10/ES2019</h3>
+                        <p>Array and string improvements.</p>
+                        <ul>
+                            <li>Array.prototype.flat() and flatMap()</li>
+                            <li>Object.fromEntries()</li>
+                            <li>String.prototype.trimStart() and trimEnd()</li>
+                            <li>Optional catch binding</li>
+                        </ul>
+                        <div class="code-example">
+                            <h4>ES10 Example:</h4>
+                            <pre><code>// Array flat
+const nested = [1, [2, 3], [4, [5, 6]]];
+console.log(nested.flat()); // [1, 2, 3, 4, [5, 6]]
+console.log(nested.flat(2)); // [1, 2, 3, 4, 5, 6]
+
+// Object.fromEntries
+const entries = [['name', 'John'], ['age', 30]];
+const obj = Object.fromEntries(entries);
+console.log(obj); // { name: 'John', age: 30 }</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">2020</div>
+                    <div class="timeline-content">
+                        <h3>ES11/ES2020</h3>
+                        <p>Null safety and module improvements.</p>
+                        <ul>
+                            <li>Optional chaining (?.)</li>
+                            <li>Nullish coalescing (??)</li>
+                            <li>BigInt</li>
+                            <li>Promise.allSettled()</li>
+                            <li>Dynamic import()</li>
+                        </ul>
+                        <div class="code-example">
+                            <h4>ES11 Example:</h4>
+                            <pre><code>// Optional chaining
+const user = { profile: { name: 'John' } };
+console.log(user?.profile?.name); // 'John'
+console.log(user?.address?.street); // undefined
+
+// Nullish coalescing
+const value = null ?? 'default'; // 'default'
+const empty = '' ?? 'default'; // ''
+
+// BigInt
+const bigNumber = 9007199254740991n;
+console.log(bigNumber + 1n); // 9007199254740992n</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">2021</div>
+                    <div class="timeline-content">
+                        <h3>ES12/ES2021</h3>
+                        <p>String and logical improvements.</p>
+                        <ul>
+                            <li>String.prototype.replaceAll()</li>
+                            <li>Promise.any()</li>
+                            <li>Logical assignment operators</li>
+                            <li>Numeric separators</li>
+                        </ul>
+                        <div class="code-example">
+                            <h4>ES12 Example:</h4>
+                            <pre><code>// String replaceAll
+const text = 'hello world hello';
+console.log(text.replaceAll('hello', 'hi')); // 'hi world hi'
+
+// Logical assignment
+let x = 0;
+x ||= 5; // x = 5 (if x is falsy)
+x &&= 10; // x = 10 (if x is truthy)
+
+// Numeric separators
+const million = 1_000_000;
+console.log(million); // 1000000</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">2022</div>
+                    <div class="timeline-content">
+                        <h3>ES13/ES2022</h3>
+                        <p>Class fields and top-level await.</p>
+                        <ul>
+                            <li>Class fields (public and private)</li>
+                            <li>Top-level await</li>
+                            <li>Array.prototype.at()</li>
+                            <li>Object.hasOwn()</li>
+                            <li>Error cause</li>
+                        </ul>
+                        <div class="code-example">
+                            <h4>ES13 Example:</h4>
+                            <pre><code>// Class fields
+class User {
+    name = 'John'; // public field
+    #password = 'secret'; // private field
+    
+    constructor(age) {
+        this.age = age;
+    }
+}
+
+// Top-level await
+const response = await fetch('/api/data');
+const data = await response.json();
+
+// Array.at()
+const arr = [1, 2, 3, 4, 5];
+console.log(arr.at(-1)); // 5 (last element)
+console.log(arr.at(-2)); // 4 (second to last)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">2023</div>
+                    <div class="timeline-content">
+                        <h3>ES14/ES2023</h3>
+                        <p>Array and object improvements.</p>
+                        <ul>
+                            <li>Array.prototype.findLast() and findLastIndex()</li>
+                            <li>Hashbang syntax</li>
+                            <li>Symbol as WeakMap keys</li>
+                        </ul>
+                        <div class="code-example">
+                            <h4>ES14 Example:</h4>
+                            <pre><code>// Array findLast
+const numbers = [1, 2, 3, 4, 5, 6];
+const lastEven = numbers.findLast(n => n % 2 === 0);
+console.log(lastEven); // 6
+
+const lastEvenIndex = numbers.findLastIndex(n => n % 2 === 0);
+console.log(lastEvenIndex); // 5
+
+// Hashbang
+#!/usr/bin/env node
+console.log('This is a Node.js script');</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">2024</div>
+                    <div class="timeline-content">
+                        <h3>ES15/ES2024</h3>
+                        <p>Latest features and improvements.</p>
+                        <ul>
+                            <li>Promise.withResolvers()</li>
+                            <li>Array grouping methods</li>
+                            <li>Set methods</li>
+                            <li>Pipeline operator (proposal)</li>
+                        </ul>
+                        <div class="code-example">
+                            <h4>ES15 Example:</h4>
+                            <pre><code>// Promise.withResolvers
+const { promise, resolve, reject } = Promise.withResolvers();
+
+// Array grouping
+const items = [
+    { name: 'apple', category: 'fruit' },
+    { name: 'carrot', category: 'vegetable' },
+    { name: 'banana', category: 'fruit' }
+];
+
+const grouped = Object.groupBy(items, item => item.category);
+console.log(grouped);
+// { fruit: [...], vegetable: [...] }</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="conclusion">
-      <h2>📌 Conclusión</h2>
-      <p>ECMAScript es el motor detrás de JavaScript moderno. Aprender las nuevas versiones y sus funciones permite escribir código más limpio, eficiente y fácil de mantener.</p>
-      <p>No necesitas aprender todo de una vez, pero conocer las herramientas más recientes te da una gran ventaja como desarrollador web.</p>
-    </section>
-  </main>
+    <!-- Interactive Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title">Interactive Feature Explorer</h2>
+            <div class="feature-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="variables">Variables</button>
+                    <button class="tab-btn" data-tab="functions">Functions</button>
+                    <button class="tab-btn" data-tab="objects">Objects</button>
+                    <button class="tab-btn" data-tab="arrays">Arrays</button>
+                    <button class="tab-btn" data-tab="async">Async</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-pane active" id="variables">
+                        <h3>Variable Declarations</h3>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>var (ES1)</h4>
+                                <p>Function-scoped variable declaration</p>
+                                <pre><code>var x = 10;
+if (true) {
+    var x = 20; // Same variable
+}
+console.log(x); // 20</code></pre>
+                            </div>
+                            <div class="feature-card">
+                                <h4>let (ES6)</h4>
+                                <p>Block-scoped variable declaration</p>
+                                <pre><code>let x = 10;
+if (true) {
+    let x = 20; // Different variable
+}
+console.log(x); // 10</code></pre>
+                            </div>
+                            <div class="feature-card">
+                                <h4>const (ES6)</h4>
+                                <p>Block-scoped constant declaration</p>
+                                <pre><code>const PI = 3.14159;
+// PI = 3.14; // Error!
 
-  <footer>
-    <p>📘 Tutorial con fines educativos, creado por Javier Duarte & Daniel Vinasco</p>
-  </footer>
+const obj = { name: 'John' };
+obj.name = 'Jane'; // OK - object properties can change</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="functions">
+                        <h3>Function Declarations</h3>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>Function Declaration (ES1)</h4>
+                                <pre><code>function greet(name) {
+    return 'Hello, ' + name;
+}</code></pre>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Function Expression (ES3)</h4>
+                                <pre><code>const greet = function(name) {
+    return 'Hello, ' + name;
+};</code></pre>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Arrow Function (ES6)</h4>
+                                <pre><code>const greet = (name) => {
+    return 'Hello, ' + name;
+};
+
+// Shorthand
+const greet = name => 'Hello, ' + name;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="objects">
+                        <h3>Object Features</h3>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>Object Literal (ES1)</h4>
+                                <pre><code>const person = {
+    name: 'John',
+    age: 30,
+    greet: function() {
+        return 'Hello, ' + this.name;
+    }
+};</code></pre>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Method Shorthand (ES6)</h4>
+                                <pre><code>const person = {
+    name: 'John',
+    age: 30,
+    greet() {
+        return 'Hello, ' + this.name;
+    }
+};</code></pre>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Destructuring (ES6)</h4>
+                                <pre><code>const { name, age } = person;
+console.log(name, age); // John 30
+
+// With default values
+const { name, age, city = 'NYC' } = person;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="arrays">
+                        <h3>Array Methods</h3>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>forEach (ES5)</h4>
+                                <pre><code>const numbers = [1, 2, 3];
+numbers.forEach(n => console.log(n));</code></pre>
+                            </div>
+                            <div class="feature-card">
+                                <h4>map (ES5)</h4>
+                                <pre><code>const doubled = numbers.map(n => n * 2);
+console.log(doubled); // [2, 4, 6]</code></pre>
+                            </div>
+                            <div class="feature-card">
+                                <h4>filter (ES5)</h4>
+                                <pre><code>const evens = numbers.filter(n => n % 2 === 0);
+console.log(evens); // [2]</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="async">
+                        <h3>Asynchronous Programming</h3>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>Callbacks (ES3)</h4>
+                                <pre><code>function fetchData(callback) {
+    setTimeout(() => {
+        callback('Data received');
+    }, 1000);
+}</code></pre>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Promises (ES6)</h4>
+                                <pre><code>function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Data received');
+        }, 1000);
+    });
+}</code></pre>
+                            </div>
+                            <div class="feature-card">
+                                <h4>async/await (ES8)</h4>
+                                <pre><code>async function getData() {
+    try {
+        const data = await fetchData();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Examples Section -->
+    <section id="examples" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Interactive Code Examples</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h3>Template Literals (ES6)</h3>
+                    <div class="code-editor">
+                        <div class="editor-header">
+                            <span>template-literals.js</span>
+                            <button class="run-btn" onclick="runExample('template-literals')">Run</button>
+                        </div>
+                        <pre><code>const name = 'John';
+const age = 30;
+const city = 'New York';
+
+// Old way (ES5)
+const message1 = 'Hello, my name is ' + name + 
+                ', I am ' + age + ' years old, ' +
+                'and I live in ' + city + '.';
+
+// New way (ES6)
+const message2 = `Hello, my name is ${name}, 
+I am ${age} years old, and I live in ${city}.`;
+
+console.log(message1);
+console.log(message2);</code></pre>
+                        <div class="output" id="template-literals-output"></div>
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h3>Destructuring (ES6)</h3>
+                    <div class="code-editor">
+                        <div class="editor-header">
+                            <span>destructuring.js</span>
+                            <button class="run-btn" onclick="runExample('destructuring')">Run</button>
+                        </div>
+                        <pre><code>// Object destructuring
+const user = {
+    name: 'Alice',
+    age: 25,
+    email: 'alice@example.com',
+    address: {
+        city: 'Boston',
+        country: 'USA'
+    }
+};
+
+const { name, age, address: { city } } = user;
+
+console.log(name); // Alice
+console.log(age);  // 25
+console.log(city); // Boston
+
+// Array destructuring
+const colors = ['red', 'green', 'blue'];
+const [first, second, third] = colors;
+
+console.log(first, second, third);</code></pre>
+                        <div class="output" id="destructuring-output"></div>
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h3>Optional Chaining (ES2020)</h3>
+                    <div class="code-editor">
+                        <div class="editor-header">
+                            <span>optional-chaining.js</span>
+                            <button class="run-btn" onclick="runExample('optional-chaining')">Run</button>
+                        </div>
+                        <pre><code>const user = {
+    name: 'John',
+    profile: {
+        avatar: {
+            url: 'https://example.com/avatar.jpg'
+        }
+    }
+};
+
+// Without optional chaining
+const avatarUrl1 = user.profile && 
+                  user.profile.avatar && 
+                  user.profile.avatar.url;
+
+// With optional chaining
+const avatarUrl2 = user.profile?.avatar?.url;
+
+console.log('Old way:', avatarUrl1);
+console.log('New way:', avatarUrl2);
+
+// With nullish coalescing
+const defaultUrl = user.profile?.avatar?.url ?? 'default-avatar.jpg';
+console.log('Default:', defaultUrl);</code></pre>
+                        <div class="output" id="optional-chaining-output"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section">
+        <div class="container">
+            <h2 class="section-title">Learning Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Official Documentation</h3>
+                    <ul>
+                        <li><a href="https://tc39.es/ecma262/" target="_blank">ECMAScript Specification</a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN JavaScript Guide</a></li>
+                        <li><a href="https://tc39.es/proposals/" target="_blank">TC39 Proposals</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <h3>Video Tutorials</h3>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=W6NZfCO5SIk" target="_blank">JavaScript for Beginners</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=hdI2bqOjy3c" target="_blank">Modern JavaScript Crash Course</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=Oe421EPjeBE" target="_blank">ES6+ Features</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Interactive Learning</h3>
+                    <ul>
+                        <li><a href="https://javascript.info/" target="_blank">JavaScript.info</a></li>
+                        <li><a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/" target="_blank">freeCodeCamp</a></li>
+                        <li><a href="https://exercism.org/tracks/javascript" target="_blank">Exercism JavaScript Track</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Development Tools</h3>
+                    <ul>
+                        <li><a href="https://babeljs.io/" target="_blank">Babel - JavaScript Compiler</a></li>
+                        <li><a href="https://eslint.org/" target="_blank">ESLint - Code Linter</a></li>
+                        <li><a href="https://prettier.io/" target="_blank">Prettier - Code Formatter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ECMAScript Guide</h3>
+                    <p>A comprehensive resource for learning JavaScript's evolution from ES1 to ES2024.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#versions">Versions</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#examples">Examples</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ECMAScript Guide. Built with ❤️ for the JavaScript community.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
-</html>
+</html> 
